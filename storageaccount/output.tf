@@ -14,3 +14,8 @@ output "primary_connection_string" {
   sensitive = true
   value = element(concat(azurerm_storage_account.storage_account.*.primary_connection_string, var.null_list), 0)
 }
+
+output "primary_access_key" {
+  sensitive = true
+  value = element(concat(azurerm_storage_account.storage_account.*.primary_access_key, var.null_list), 0)
+}
